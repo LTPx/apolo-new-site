@@ -23,7 +23,7 @@ export function Banner(props: BannerProps) {
             <Link
               href={btn.link}
               key={index}
-              className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-primary-600 focus:outline-none focus:ring active:bg-primary-400 sm:w-auto"
+              className="rounded-3xl bg-primary px-8 py-3.5 text font-medium text-white shadow hover:bg-primary-600 focus:outline-none focus:ring active:bg-primary-400 sm:w-auto"
             >
               {btn.title}
             </Link>

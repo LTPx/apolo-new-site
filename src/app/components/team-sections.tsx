@@ -20,15 +20,21 @@ export function TeamSection(props: TeamSectionProps) {
         {title}
       </h2>
       <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 mt-10">
-        {members.map((item, index) => (
-          <MemberTeam
-            key={index}
-            img={item.img}
-            name={item.name}
-            profession={item.profession}
-          />
-        ))}
+      <div className="mt-10 overflow-hidden">
+        <div className="flex flex-nowrap gap-4 lg:grid lg:grid-cols-3 lg:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar">
+          {members.map((item, index) => (
+            <div 
+              key={index} 
+              className="flex-shrink-0 w-80 lg:flex-shrink lg:w-auto snap-start pb-4"
+            >
+              <MemberTeam
+                img={item.img}
+                name={item.name}
+                profession={item.profession}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

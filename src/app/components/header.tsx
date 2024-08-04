@@ -1,13 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
-export interface HeaderProps {
-  children?: any;
-}
-
-export function Header(props: HeaderProps) {
-  const { children } = props;
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+export function Header() {
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -34,38 +29,22 @@ export function Header(props: HeaderProps) {
     >
       <div className="container mx-auto flex items-center justify-between p-6 lg:px-8">
         <div className="flex items-center">
-          <img
-            src="https://joinapolo.com/app/themes/child/assets/images/logo-apolo.svg"
-            alt="logo-header"
-            className={`transition-all duration-300 ${
-              isSticky ? "h-12" : "h-14"
-            }`}
-          />
+        <img
+        src="https://joinapolo.com/app/themes/child/assets/images/logo-apolo.svg"
+        alt="logo-header"
+        className={`transition-all duration-300 ${
+          isSticky ? "h-9 lg:h-12" : "h-8 lg:h-14"
+        }`}
+      />
         </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+        <div className="lg:flex lg:flex-1 lg:justify-end">
+          <Link
+            href="/"
+            className="rounded-3xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>{" "}
-          </button>
+            Join Apolo
+          </Link>
         </div>
-        {children}
       </div>
     </header>
   );
