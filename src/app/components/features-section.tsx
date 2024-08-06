@@ -8,11 +8,12 @@ interface Advantages {
 interface FeaturesSectionsProps {
   advantages: Advantages[];
   title: string;
-  imgFeatures: string;
+  mainImage: string;
+  svg: string;
 }
 
 export function FeaturesSections(props: FeaturesSectionsProps) {
-  const { advantages, title, imgFeatures } = props;
+  const { advantages, title, mainImage, svg } = props;
   return (
     <div className="mx-auto px-6 lg:px-8">
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
@@ -27,13 +28,14 @@ export function FeaturesSections(props: FeaturesSectionsProps) {
                   key={index}
                   title={item.title}
                   description={item.description}
+                  svg={svg}
                 />
               ))}
             </dl>
           </div>
         </div>
         <img
-          src={imgFeatures}
+          src={mainImage}
           alt={"features-img"}
           className="object-cover object-center h-full w-full hidden lg:flex"
         />

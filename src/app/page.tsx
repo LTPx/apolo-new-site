@@ -101,10 +101,10 @@ export default function Home() {
       link: "/",
       title: "I'm a startup",
     },
-    // {
-    //   link: "/",
-    //   title: "I'm a corporate",
-    // },
+    {
+      link: "/",
+      title: "I'm a corporate",
+    },
   ];
 
   return (
@@ -118,21 +118,25 @@ export default function Home() {
           imgHero={
             "https://s3-alpha-sig.figma.com/img/7f12/ea13/00756f144a0fb5daaf68dbfc01103a46?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TSHN~nHrkWpfRAOZBlifRXkaBRHeE7wGr9-sK4hjCkOyl9shbGF7ggduqh~CECxrYSdDAkDi~ScvqLFizEt6By2ZR9ilrmtpbxq1EoQIipBJrE3JWQhO~y0ENu2xg5iK7sSL7vfNERYTJuzQdG6hk5zG5OmEFDx1N00niVeDl7jqS27jHm87p7MGTLDWLB7RZB0yD11Z10rzPv3k2tD7J4UtMMmHWeg5e7z76B9avsQObLXHFFFaUpU-DTzLkmq990Sb4k8aBZAd9r0H3MnGujWhBmOll3G2tQSkPUO30oiH8NuM9pmQVlKJ5ZK~67kSaLOeZcg0D1ce2WYZefS8YQ__"
           }
+          textButton={'Become a founder'}
+          textLearnMore={'Learn more'}
         />
       </section>
       <section>
         <StartupStudio
           title={"The Startup Studio"}
           studioFeatures={featuresStartup}
+          svg={''}
         />
       </section>
       <section>
         <FeaturesSections
           title={"Increasing the chance of success"}
           advantages={exampleFeatures}
-          imgFeatures={
+          mainImage={
             "https://s3-alpha-sig.figma.com/img/7f12/ea13/00756f144a0fb5daaf68dbfc01103a46?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TSHN~nHrkWpfRAOZBlifRXkaBRHeE7wGr9-sK4hjCkOyl9shbGF7ggduqh~CECxrYSdDAkDi~ScvqLFizEt6By2ZR9ilrmtpbxq1EoQIipBJrE3JWQhO~y0ENu2xg5iK7sSL7vfNERYTJuzQdG6hk5zG5OmEFDx1N00niVeDl7jqS27jHm87p7MGTLDWLB7RZB0yD11Z10rzPv3k2tD7J4UtMMmHWeg5e7z76B9avsQObLXHFFFaUpU-DTzLkmq990Sb4k8aBZAd9r0H3MnGujWhBmOll3G2tQSkPUO30oiH8NuM9pmQVlKJ5ZK~67kSaLOeZcg0D1ce2WYZefS8YQ__"
           }
+          svg={''}
         />
       </section>
       <section>

@@ -8,10 +8,11 @@ interface Features {
 interface StartupStudioProps {
   studioFeatures: Features[];
   title: string;
+  svg: string;
 }
 
 export function StartupStudio(props: StartupStudioProps) {
-  const { studioFeatures, title } = props;
+  const { studioFeatures, title, svg } = props;
   return (
     <div className="lg:grid lg:grid-cols-4 gap-4 mx-auto px-6 lg:px-8 flex flex-col">
       <div className="col-span-1">
@@ -25,6 +26,7 @@ export function StartupStudio(props: StartupStudioProps) {
             key={index}
             title={studio.title}
             description={studio.description}
+            imageSvg={svg}
           />
         ))}
       </div>

@@ -10,10 +10,11 @@ interface TeamSectionProps {
   members: MemberProps[];
   title: string;
   description: string;
+  social?: string;
 }
 
 export function TeamSection(props: TeamSectionProps) {
-  const { members, title, description } = props;
+  const { members, title, description, social } = props;
   return (
     <div className="mx-auto px-6 lg:px-8">
       <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
