@@ -8,8 +8,8 @@ export function Footer(props: FooterProps) {
   const { address } = props;
   return (
     <footer className="bg-black">
-      <div className="mx-auto container px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div className="mx-auto container px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-16">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 pb-16">
           <div>
             <div className="flex justify-start text-teal-600">
               <img src="https://joinapolo.com/app/themes/child/assets/images/logo-apolo-footer.svg" />
@@ -59,7 +59,7 @@ export function Footer(props: FooterProps) {
               </span>
               <Link
                 className="inline-block text-white underline transition hover:text-primary"
-                href="/"
+                href="/terms-and-conditions"
               >
                 Terms & Conditions
               </Link>

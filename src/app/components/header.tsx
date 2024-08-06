@@ -2,7 +2,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export function Header() {
+interface HeaderProps {
+  logo: string;
+  titleBtn: string;
+}
+
+export function Header(props: HeaderProps) {
+  const { logo, titleBtn } = props;
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -29,20 +35,37 @@ export function Header() {
     >
       <div className="container mx-auto flex items-center justify-between p-6 lg:px-8">
         <div className="flex items-center">
-        <img
-        src="https://joinapolo.com/app/themes/child/assets/images/logo-apolo.svg"
-        alt="logo-header"
-        className={`transition-all duration-300 ${
-          isSticky ? "h-9 lg:h-12" : "h-8 lg:h-14"
-        }`}
-      />
+          <Link href="/">
+            <img
+              src={logo}
+              alt="logo-header"
+              className={`transition-all duration-300 ${
+                isSticky ? "h-9 lg:h-12" : "h-8 lg:h-14"
+              }`}
+            />
+          </Link>
         </div>
-        <div className="lg:flex lg:flex-1 lg:justify-end">
+        <div className="lg:flex lg:flex-1 lg:justify-end items-center gap-6">
+          <div className="flex gap-4 items-center">
+            <span className="text-md font-semibold text-gray-700 hover:text-primary cursor-pointer">
+              EN
+            </span>
+            <span>/</span>
+            <span className="text-md font-semibold text-gray-700 hover:text-primary cursor-pointer">
+              FR
+            </span>
+          </div>
+          <Link
+            href="/jobs"
+            className="text-md font-semibold text-gray-700 hover:text-primary"
+          >
+            Jobs
+          </Link>
           <Link
             href="/"
             className="rounded-3xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Join Apolo
+            {titleBtn}
           </Link>
         </div>
       </div>
