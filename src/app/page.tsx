@@ -1,113 +1,174 @@
-import Image from "next/image";
+import Hero from "./components/hero";
+import StartupStudio from "./components/startup-studio";
+import FeaturesSections from "./components/features-section";
+import AlreadyLaunched from "./components/already-launched";
+import TeamSection from "./components/team-sections";
+import Banner from "./components/banner";
+import Sponsors from "./components/sponsors";
 
 export default function Home() {
+  const exampleFeatures = [
+    {
+      title: "Innovative Solutions",
+      description: "Creating cutting-edge solutions for modern problems.",
+    },
+    {
+      title: "Expert Team",
+      description: "A diverse team of experts ready to tackle any challenge.",
+    },
+    {
+      title: "Global Reach",
+      description: "Expanding our impact to markets around the world.",
+    },
+    {
+      title: "Sustainable Growth",
+      description: "Focusing on sustainable and scalable business models.",
+    },
+  ];
+
+  const featuresStartup = [
+    {
+      title: "Innovative Solutions",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
+    },
+    {
+      title: "Expert Team",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
+    },
+    {
+      title: "Global Reach",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
+    },
+    {
+      title: "Sustainable Growth",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
+    },
+  ];
+
+  const launchedImages = [
+    "https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg",
+    "https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg",
+    "https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg",
+    "https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg",
+    "https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg",
+  ];
+
+  const sponsors = [
+    "https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg",
+    "https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg",
+    "https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg",
+    "https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg",
+  ];
+
+  const teamMembers = [
+    {
+      img: "https://plus.unsplash.com/premium_photo-1664536392896-cd1743f9c02c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww",
+      name: "John Doe",
+      profession: "Software Engineer",
+    },
+    {
+      img: "https://plus.unsplash.com/premium_photo-1675130119373-61ada6685d63?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fHww",
+      name: "Jane Smith",
+      profession: "Product Manager",
+    },
+    {
+      img: "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVyc29ufGVufDB8fDB8fHww",
+      name: "Michael Johnson",
+      profession: "UI/UX Designer",
+    },
+    {
+      img: "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+      name: "Emily Davis",
+      profession: "Marketing Specialist",
+    },
+    {
+      img: "https://images.unsplash.com/photo-1445053023192-8d45cb66099d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGVyc29ufGVufDB8fDB8fHww",
+      name: "Chris Brown",
+      profession: "Data Analyst",
+    },
+  ];
+
+  const btnBanner = [
+    {
+      link: "/",
+      title: "Become a founder",
+    },
+    {
+      link: "/",
+      title: "I'm a startup",
+    },
+    {
+      link: "/",
+      title: "I'm a corporate",
+    },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <div className="container mx-auto flex flex-col gap-20">
+      <section>
+        <Hero
+          title={"We build digital companies with you"}
+          description={
+            "We design, test and grow digital business from concept to successful startups "
+          }
+          imgHero={
+            "https://s3-alpha-sig.figma.com/img/7f12/ea13/00756f144a0fb5daaf68dbfc01103a46?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TSHN~nHrkWpfRAOZBlifRXkaBRHeE7wGr9-sK4hjCkOyl9shbGF7ggduqh~CECxrYSdDAkDi~ScvqLFizEt6By2ZR9ilrmtpbxq1EoQIipBJrE3JWQhO~y0ENu2xg5iK7sSL7vfNERYTJuzQdG6hk5zG5OmEFDx1N00niVeDl7jqS27jHm87p7MGTLDWLB7RZB0yD11Z10rzPv3k2tD7J4UtMMmHWeg5e7z76B9avsQObLXHFFFaUpU-DTzLkmq990Sb4k8aBZAd9r0H3MnGujWhBmOll3G2tQSkPUO30oiH8NuM9pmQVlKJ5ZK~67kSaLOeZcg0D1ce2WYZefS8YQ__"
+          }
+          textButton={'Become a founder'}
+          textLearnMore={'Learn more'}
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </section>
+      <section>
+        <StartupStudio
+          title={"The Startup Studio"}
+          studioFeatures={featuresStartup}
+          svg={''}
+        />
+      </section>
+      <section>
+        <FeaturesSections
+          title={"Increasing the chance of success"}
+          advantages={exampleFeatures}
+          mainImage={
+            "https://s3-alpha-sig.figma.com/img/7f12/ea13/00756f144a0fb5daaf68dbfc01103a46?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TSHN~nHrkWpfRAOZBlifRXkaBRHeE7wGr9-sK4hjCkOyl9shbGF7ggduqh~CECxrYSdDAkDi~ScvqLFizEt6By2ZR9ilrmtpbxq1EoQIipBJrE3JWQhO~y0ENu2xg5iK7sSL7vfNERYTJuzQdG6hk5zG5OmEFDx1N00niVeDl7jqS27jHm87p7MGTLDWLB7RZB0yD11Z10rzPv3k2tD7J4UtMMmHWeg5e7z76B9avsQObLXHFFFaUpU-DTzLkmq990Sb4k8aBZAd9r0H3MnGujWhBmOll3G2tQSkPUO30oiH8NuM9pmQVlKJ5ZK~67kSaLOeZcg0D1ce2WYZefS8YQ__"
+          }
+          svg={''}
+        />
+      </section>
+      <section>
+        <AlreadyLaunched title={"Already Launched"} launched={launchedImages} />
+      </section>
+      <section>
+        <TeamSection
+          title={"The team behind "}
+          description={
+            "We are a team of passionate entrepreneurs with complementary skills anda string track record of building successful digital startups"
+          }
+          members={teamMembers}
+        />
+      </section>
+      <section>
+        <Banner
+          title={"Join Apolo"}
+          subtitle={
+            "We are looking for entrepreneurs, startups and corporate to collaborate with!"
+          }
+          buttons={btnBanner}
+        />
+      </section>
+      <section className="pb-20">
+        <Sponsors
+          title={"Our dear Friends"}
+          subtitle={
+            "They are amplify everything we do, benefiting each project directly"
+          }
+          sponsors={sponsors}
+        />
+      </section>
+    </div>
   );
 }
