@@ -14,6 +14,29 @@ interface Props {
 
 function Home(props: Props) {
   const { data } = props;
+  const hero = data.layout.find((ly) => ly.blockType === "apolo-hero-section");
+  const startupIntro = data.layout.find(
+    (ly) => ly.blockType === "apolo-the-studio"
+  );
+  const heroParams = {
+    title: "We build digital companies with you",
+    description: hero?.heroSubtitle,
+    imgHero:
+      "https://www.pngfind.com/pngs/m/333-3330324_imagenes-en-png-con-fondo-transparente-johns-hopkins.png",
+    textButton: hero?.heroCTA,
+    textLearnMore: hero?.learnMore,
+  };
+
+  const startupIntroParams = {
+    title: startupIntro?.title,
+    features: startupIntro?.features?.map((feature) => {
+      return {
+        title: feature.featureTitle,
+        description: feature.featureText[0].children[0].text || "",
+        icon: `https://admin.joinapolo.com${feature.featureIcon.url}`,
+      };
+    }),
+  };
 
   const exampleFeatures = [
     {
@@ -31,29 +54,6 @@ function Home(props: Props) {
     {
       title: "Sustainable Growth",
       description: "Focusing on sustainable and scalable business models.",
-    },
-  ];
-
-  const featuresStartup = [
-    {
-      title: "Innovative Solutions",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
-    },
-    {
-      title: "Expert Team",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
-    },
-    {
-      title: "Global Reach",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
-    },
-    {
-      title: "Sustainable Growth",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.",
     },
   ];
 
@@ -119,22 +119,17 @@ function Home(props: Props) {
     <div className="container mx-auto flex flex-col gap-20">
       <section>
         <Hero
-          title={"We build digital companies with you"}
-          description={
-            "We design, test and grow digital business from concept to successful startups "
-          }
-          imgHero={
-            "https://s3-alpha-sig.figma.com/img/7f12/ea13/00756f144a0fb5daaf68dbfc01103a46?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TSHN~nHrkWpfRAOZBlifRXkaBRHeE7wGr9-sK4hjCkOyl9shbGF7ggduqh~CECxrYSdDAkDi~ScvqLFizEt6By2ZR9ilrmtpbxq1EoQIipBJrE3JWQhO~y0ENu2xg5iK7sSL7vfNERYTJuzQdG6hk5zG5OmEFDx1N00niVeDl7jqS27jHm87p7MGTLDWLB7RZB0yD11Z10rzPv3k2tD7J4UtMMmHWeg5e7z76B9avsQObLXHFFFaUpU-DTzLkmq990Sb4k8aBZAd9r0H3MnGujWhBmOll3G2tQSkPUO30oiH8NuM9pmQVlKJ5ZK~67kSaLOeZcg0D1ce2WYZefS8YQ__"
-          }
-          textButton={"Become a founder"}
-          textLearnMore={"Learn more"}
+          title={heroParams.title}
+          description={heroParams.description || ""}
+          imgHero={heroParams.imgHero}
+          textButton={heroParams.textButton || ""}
+          textLearnMore={heroParams.textLearnMore || "Learn More"}
         />
       </section>
       <section>
         <StartupStudio
-          title={"The Startup Studio"}
-          studioFeatures={featuresStartup}
-          svg={""}
+          title={startupIntroParams.title || ''}
+          studioFeatures={startupIntroParams.features || []}
         />
       </section>
       <section>
