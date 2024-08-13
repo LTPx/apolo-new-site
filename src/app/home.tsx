@@ -36,7 +36,7 @@ function Home(props: Props) {
   );
 
   const heroParams = {
-    title: "We build digital companies with you",
+    title: hero?.heroCTA || '',
     description: hero?.heroSubtitle,
     imgHero: defaultImage,
     textButton: hero?.heroCTA,

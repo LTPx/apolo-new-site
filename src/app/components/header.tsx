@@ -56,12 +56,6 @@ export function Header(props: HeaderProps) {
             </span>
           </div>
           <Link
-            href="/jobs"
-            className="text-md font-semibold text-gray-700 hover:text-primary"
-          >
-            Jobs
-          </Link>
-          <Link
             href="/"
             className="rounded-3xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
