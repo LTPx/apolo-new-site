@@ -15,7 +15,7 @@ interface Props {
 function Home(props: Props) {
   const { data } = props;
   const defaultImage =
-  "https://www.pngfind.com/pngs/m/333-3330324_imagenes-en-png-con-fondo-transparente-johns-hopkins.png";
+    "https://www.pngfind.com/pngs/m/333-3330324_imagenes-en-png-con-fondo-transparente-johns-hopkins.png";
 
   const hero = data.layout.find((ly) => ly.blockType === "apolo-hero-section");
   const startupIntro = data.layout.find(
@@ -25,12 +25,14 @@ function Home(props: Props) {
     (ly) => ly.blockType === "increasing-chance-of-success"
   );
 
-  const launched = data.layout.find(
-    (ly) => ly.blockType === "apolo-launched"
-  );
+  const launched = data.layout.find((ly) => ly.blockType === "apolo-launched");
 
-  const team = data.layout.find(
-    (ly) => ly.blockType === "apolo-team"
+  const team = data.layout.find((ly) => ly.blockType === "apolo-team");
+
+  const cta = data.layout.find((ly) => ly.blockType === "apolo-bottom-ctas");
+
+  const sponsors = data.layout.find(
+    (ly) => ly.blockType === "apolo-our-dear-friends"
   );
 
   const heroParams = {
@@ -66,70 +68,47 @@ function Home(props: Props) {
 
   const launchedParams = {
     title: launched?.title,
-    launched: launched?.companies?.map((company) => `https://admin.joinapolo.com${company.companyLogo.url}`)
-  }
+    launched: launched?.companies?.map(
+      (company) =>
+        defaultImage || `https://admin.joinapolo.com${company.companyLogo.url}`
+    ),
+  };
 
   const teamParams = {
     title: team?.title,
     description: team?.subtitle,
-    members: team?.teamMembers?.map((member)=> {
+    members: team?.teamMembers?.map((member) => {
       return {
         img: defaultImage || `https://admin.joinapolo.com${member.image.url}`,
         name: member.name,
-        profession: member.role
-      }
-    })
-  }
+        profession: member.role,
+      };
+    }),
+  };
 
-  const sponsors = [
-    "https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg",
-    "https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg",
-    "https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg",
-    "https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg",
-  ];
+  const ctaParams = {
+    title: cta?.title || "",
+    subtitle: cta?.subtitle || "",
+    buttons:
+      cta?.ctas?.map((cta) => {
+        return {
+          link: "",
+          title: cta.ctaText,
+        };
+      }) || [],
+  };
 
-  const teamMembers = [
-    {
-      img: "https://plus.unsplash.com/premium_photo-1664536392896-cd1743f9c02c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww",
-      name: "John Doe",
-      profession: "Software Engineer",
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1675130119373-61ada6685d63?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fHww",
-      name: "Jane Smith",
-      profession: "Product Manager",
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVyc29ufGVufDB8fDB8fHww",
-      name: "Michael Johnson",
-      profession: "UI/UX Designer",
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
-      name: "Emily Davis",
-      profession: "Marketing Specialist",
-    },
-    {
-      img: "https://images.unsplash.com/photo-1445053023192-8d45cb66099d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGVyc29ufGVufDB8fDB8fHww",
-      name: "Chris Brown",
-      profession: "Data Analyst",
-    },
-  ];
-
-  const btnBanner = [
-    {
-      link: "/",
-      title: "Become a founder",
-    },
-    {
-      link: "/",
-      title: "I'm a startup",
-    },
-    {
-      link: "/",
-      title: "I'm a corporate",
-    },
-  ];
+  const sponsorsParams = {
+    title: sponsors?.title || "",
+    subtitle: sponsors?.subtitle || "",
+    sponsorsImageUrl:
+      sponsors?.companies?.map((company) => {
+        return (
+          defaultImage ||
+          `https://admin.joinapolo.com${company.companyLogo.url}`
+        );
+      }) || [],
+  };
 
   return (
     <div className="container mx-auto flex flex-col gap-20">
@@ -156,31 +135,30 @@ function Home(props: Props) {
         />
       </section>
       <section>
-        <AlreadyLaunched title={launched?.title || ''} launched={launchedParams.launched || []} />
+        <AlreadyLaunched
+          title={launched?.title || ""}
+          launched={launchedParams.launched || []}
+        />
       </section>
       <section>
         <TeamSection
-          title={teamParams.title || ''}
-          description={teamParams.description || ''}
+          title={teamParams.title || ""}
+          description={teamParams.description || ""}
           members={teamParams.members || []}
         />
       </section>
       <section>
         <Banner
-          title={"Join Apolo"}
-          subtitle={
-            "We are looking for entrepreneurs, startups and corporate to collaborate with!"
-          }
-          buttons={btnBanner}
+          title={ctaParams.title}
+          subtitle={ctaParams.subtitle}
+          buttons={ctaParams.buttons}
         />
       </section>
       <section className="pb-20">
         <Sponsors
-          title={"Our dear Friends"}
-          subtitle={
-            "They are amplify everything we do, benefiting each project directly"
-          }
-          sponsors={sponsors}
+          title={sponsorsParams.title}
+          subtitle={sponsorsParams.subtitle}
+          sponsorsImageUrl={sponsorsParams.sponsorsImageUrl}
         />
       </section>
     </div>

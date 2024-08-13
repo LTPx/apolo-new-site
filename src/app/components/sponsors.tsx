@@ -1,11 +1,11 @@
 interface SponsorsProps {
   title: string;
   subtitle: string;
-  sponsors: string[];
+  sponsorsImageUrl: string[];
 }
 
 export function Sponsors(props: SponsorsProps) {
-  const { title, subtitle, sponsors } = props;
+  const { title, subtitle, sponsorsImageUrl } = props;
   return (
     <div className="mx-auto px-6 py-8 sm:py-12 lg:px-8">
       <div>
@@ -15,7 +15,7 @@ export function Sponsors(props: SponsorsProps) {
         <p className="mt-4 sm:text-xl/relaxed">{subtitle}</p>
       </div>
       <div className="mx-auto mt-14 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
-        {sponsors.map((item, index) => (
+        {sponsorsImageUrl.map((item, index) => (
           <img
             src={item}
             key={index}
