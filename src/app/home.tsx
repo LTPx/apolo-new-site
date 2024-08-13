@@ -14,6 +14,9 @@ interface Props {
 
 function Home(props: Props) {
   const { data } = props;
+  const defaultImage =
+  "https://www.pngfind.com/pngs/m/333-3330324_imagenes-en-png-con-fondo-transparente-johns-hopkins.png";
+
   const hero = data.layout.find((ly) => ly.blockType === "apolo-hero-section");
   const startupIntro = data.layout.find(
     (ly) => ly.blockType === "apolo-the-studio"
@@ -22,8 +25,13 @@ function Home(props: Props) {
     (ly) => ly.blockType === "increasing-chance-of-success"
   );
 
-  const defaultImage =
-    "https://www.pngfind.com/pngs/m/333-3330324_imagenes-en-png-con-fondo-transparente-johns-hopkins.png";
+  const launched = data.layout.find(
+    (ly) => ly.blockType === "apolo-launched"
+  );
+
+  const team = data.layout.find(
+    (ly) => ly.blockType === "apolo-team"
+  );
 
   const heroParams = {
     title: "We build digital companies with you",
@@ -56,13 +64,22 @@ function Home(props: Props) {
     mainImage: defaultImage,
   };
 
-  const launchedImages = [
-    "https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg",
-    "https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg",
-    "https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg",
-    "https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg",
-    "https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg",
-  ];
+  const launchedParams = {
+    title: launched?.title,
+    launched: launched?.companies?.map((company) => `https://admin.joinapolo.com${company.companyLogo.url}`)
+  }
+
+  const teamParams = {
+    title: team?.title,
+    description: team?.subtitle,
+    members: team?.teamMembers?.map((member)=> {
+      return {
+        img: defaultImage || `https://admin.joinapolo.com${member.image.url}`,
+        name: member.name,
+        profession: member.role
+      }
+    })
+  }
 
   const sponsors = [
     "https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg",
@@ -139,15 +156,13 @@ function Home(props: Props) {
         />
       </section>
       <section>
-        <AlreadyLaunched title={"Already Launched"} launched={launchedImages} />
+        <AlreadyLaunched title={launched?.title || ''} launched={launchedParams.launched || []} />
       </section>
       <section>
         <TeamSection
-          title={"The team behind "}
-          description={
-            "We are a team of passionate entrepreneurs with complementary skills anda string track record of building successful digital startups"
-          }
-          members={teamMembers}
+          title={teamParams.title || ''}
+          description={teamParams.description || ''}
+          members={teamParams.members || []}
         />
       </section>
       <section>
