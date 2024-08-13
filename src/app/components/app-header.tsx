@@ -1,12 +1,10 @@
 import Header from "./header";
 
-async function AppHeader() {
+async function AppHeader({ logoUrl, title }: { logoUrl: string, title: string }) {
   return (
     <Header
-      logo={
-        "https://joinapolo.com/app/themes/child/assets/images/logo-apolo.svg"
-      }
-      titleBtn={"Join Apolo"}
+      logo={logoUrl}
+      titleBtn={title}
     />
   );
 }
