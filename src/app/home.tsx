@@ -36,11 +36,13 @@ function Home(props: Props) {
   );
 
   const heroParams = {
-    title: hero?.heroTitle || '',
+    title: hero?.heroTitle || "",
     description: hero?.heroSubtitle,
-    imgHero: hero?.heroImage?.url ? `https://admin.joinapolo.com${hero?.heroImage?.url}` : '',
+    imgHero: hero?.heroImage?.url
+      ? `https://admin.joinapolo.com${hero?.heroImage?.url}`
+      : "",
     textButton: hero?.heroCTA?.heroCTA,
-    textLearnMore: hero?.learnMore || '',
+    textLearnMore: hero?.learnMore || "",
   };
 
   const startupIntroParams = {
@@ -81,7 +83,7 @@ function Home(props: Props) {
         img: `https://admin.joinapolo.com${member.image.url}`,
         name: member.name,
         profession: member.role,
-        alt: member.image.alt || member.name
+        alt: member.image.alt || member.name,
       };
     }),
   };
@@ -103,8 +105,7 @@ function Home(props: Props) {
     subtitle: sponsors?.subtitle || "",
     sponsorsImageUrl:
       sponsors?.companies?.map((company) => {
-        return (`https://admin.joinapolo.com${company.companyLogo.url}`
-        );
+        return `https://admin.joinapolo.com${company.companyLogo.url}`;
       }) || [],
   };
 
