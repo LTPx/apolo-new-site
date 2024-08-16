@@ -37,6 +37,7 @@ export interface Layout {
   companies?:    Company[];
   teamMembers?:  TeamMember[];
   ctas?:         Cta[];
+  image?: Image;
 }
 
 export interface Chance {

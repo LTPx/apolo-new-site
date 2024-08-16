@@ -65,7 +65,9 @@ function Home(props: Props) {
         icon: `https://admin.joinapolo.com${feature.featureIcon.url}`,
       };
     }),
-    mainImage: defaultImage,
+    mainImage: chanceSuccess?.image?.url
+      ? `https://admin.joinapolo.com${chanceSuccess.image.url}`
+      : defaultImage,
   };
 
   const launchedParams = {
@@ -105,7 +107,9 @@ function Home(props: Props) {
     subtitle: sponsors?.subtitle || "",
     sponsorsImageUrl:
       sponsors?.companies?.map((company) => {
-        return `https://admin.joinapolo.com${company.companyLogo.url}`;
+        return company.companyLogo.url
+          ? `https://admin.joinapolo.com${company.companyLogo.url}`
+          : defaultImage;
       }) || [],
   };
 
