@@ -36,11 +36,11 @@ function Home(props: Props) {
   );
 
   const heroParams = {
-    title: hero?.heroCTA || '',
+    title: hero?.heroTitle || '',
     description: hero?.heroSubtitle,
-    imgHero: defaultImage,
-    textButton: hero?.heroCTA,
-    textLearnMore: hero?.learnMore,
+    imgHero: hero?.heroImage?.url ? `https://admin.joinapolo.com${hero?.heroImage?.url}` : '',
+    textButton: hero?.heroCTA?.heroCTA,
+    textLearnMore: hero?.learnMore || '',
   };
 
   const startupIntroParams = {
@@ -81,6 +81,7 @@ function Home(props: Props) {
         img: `https://admin.joinapolo.com${member.image.url}`,
         name: member.name,
         profession: member.role,
+        alt: member.image.alt || member.name
       };
     }),
   };

@@ -2,6 +2,7 @@ import MemberTeam from "./member-team";
 
 interface MemberProps {
   img: string;
+  alt: string;
   name: string;
   profession: string;
 }
@@ -24,12 +25,13 @@ export function TeamSection(props: TeamSectionProps) {
       <div className="mt-10 overflow-hidden">
         <div className="flex flex-nowrap gap-4 lg:grid lg:grid-cols-3 lg:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar">
           {members.map((item, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="flex-shrink-0 w-80 lg:flex-shrink lg:w-auto snap-start pb-4"
             >
               <MemberTeam
                 img={item.img}
+                alt={item.alt}
                 name={item.name}
                 profession={item.profession}
               />

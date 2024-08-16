@@ -21,8 +21,14 @@ export interface Layout {
   tagLine?:      TagLine[];
   heroSubtitle?: string;
   learnMore?:    string;
-  heroCTA?:      string;
-  heroImage?:    string;
+  heroTitle?: string;
+  heroCTA?:      {
+    heroCTA: string;
+    heroCTALink: string;
+  };
+  heroImage?:    {
+    url: string
+  };
   title?:        string;
   features?:     Chance[];
   topTitle?:     string;

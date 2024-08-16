@@ -24,12 +24,12 @@ export function Hero(props: HeroProps) {
           >
             {textButton}
           </Link>
-          <Link
+          {/* <Link
             href="/"
             className="lg:mt-0 text-md font-semibold leading-6 text-gray-900"
           >
             {textLearnMore} <span aria-hidden="true">→</span>
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div className="hidden lg:flex lg:col-span-1 mt-4 lg:mt-0">
