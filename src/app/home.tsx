@@ -69,8 +69,7 @@ function Home(props: Props) {
   const launchedParams = {
     title: launched?.title,
     launched: launched?.companies?.map(
-      (company) =>
-        defaultImage || `https://admin.joinapolo.com${company.companyLogo.url}`
+      (company) => `https://admin.joinapolo.com${company.companyLogo.url}`
     ),
   };
 
@@ -79,7 +78,7 @@ function Home(props: Props) {
     description: team?.subtitle,
     members: team?.teamMembers?.map((member) => {
       return {
-        img: defaultImage || `https://admin.joinapolo.com${member.image.url}`,
+        img: `https://admin.joinapolo.com${member.image.url}`,
         name: member.name,
         profession: member.role,
       };
@@ -103,9 +102,7 @@ function Home(props: Props) {
     subtitle: sponsors?.subtitle || "",
     sponsorsImageUrl:
       sponsors?.companies?.map((company) => {
-        return (
-          defaultImage ||
-          `https://admin.joinapolo.com${company.companyLogo.url}`
+        return (`https://admin.joinapolo.com${company.companyLogo.url}`
         );
       }) || [],
   };
@@ -136,7 +133,7 @@ function Home(props: Props) {
       </section>
       <section>
         <AlreadyLaunched
-          title={launched?.title || ""}
+          title={launchedParams.title || ""}
           launched={launchedParams.launched || []}
         />
       </section>
