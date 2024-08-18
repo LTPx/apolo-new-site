@@ -45,19 +45,19 @@ export function Header(props: HeaderProps) {
             />
           </Link>
         </div>
-        <div className="lg:flex lg:flex-1 lg:justify-end items-center gap-6">
+        <div className="flex lg:flex lg:flex-1 lg:justify-end items-center gap-6">
           <div className="flex gap-4 items-center">
             <span className="text-md font-semibold text-gray-700 hover:text-primary cursor-pointer">
-              EN
+              en
             </span>
             <span>/</span>
             <span className="text-md font-semibold text-gray-700 hover:text-primary cursor-pointer">
-              FR
+              fr
             </span>
           </div>
           <Link
             href="/"
-            className="rounded-3xl bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             {titleBtn}
           </Link>

@@ -141,6 +141,7 @@ function Home(props: Props) {
         <AlreadyLaunched
           title={launchedParams.title || ""}
           launched={launchedParams.launched || []}
+          urlLink=""
         />
       </section>
       <section>

@@ -20,7 +20,7 @@ export function Hero(props: HeroProps) {
         <div className="mt-10 flex items-center gap-x-6 lg:flex-row">
           <Link
             href="/"
-            className="rounded-3xl bg-primary px-6 py-4 text-md font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-lg bg-primary px-6 py-3 text-md font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             {textButton}
           </Link>
