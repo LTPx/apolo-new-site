@@ -5,10 +5,12 @@ import Link from "next/link";
 interface HeaderProps {
   logo: string;
   titleBtn: string;
+  width?: number;
+  height?: number
 }
 
 export function Header(props: HeaderProps) {
-  const { logo, titleBtn } = props;
+  const { logo, titleBtn, width, height } = props;
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -36,9 +38,13 @@ export function Header(props: HeaderProps) {
       <div className="container mx-auto flex items-center justify-between p-6 lg:px-8">
         <div className="flex items-center">
           <Link href="/">
-            <img
+          <img
               src={logo}
               alt="logo-header"
+              style={{
+                width: width ? `${width}px` : undefined,
+                height: height ? `${height}px` : undefined,
+              }}
               className={`transition-all duration-300 ${
                 isSticky ? "h-9 lg:h-12" : "h-8 lg:h-14"
               }`}

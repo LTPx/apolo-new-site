@@ -11,6 +11,8 @@ async function App(props: Props) {
   const layoutData = await getWebsiteData();
   const header = layoutData.layout.find((ly)=>ly.blockType === 'apolo-header')
   const logoUrlBase = header?.logoImage?.sizes.tablet.url;
+  const widthLogo = header?.logoImage?.sizes.tablet.width || undefined;
+  const heightLogo = header?.logoImage?.sizes.tablet.height || undefined;;
   const logoUrl = `https://admin.joinapolo.com${logoUrlBase}`;
   const title = header?.textCTA || 'Join Apolo';
 

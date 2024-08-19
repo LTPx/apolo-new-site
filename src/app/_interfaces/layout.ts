@@ -28,6 +28,8 @@ export interface Layout {
   };
   heroImage?: {
     url: string;
+    width?: number;
+    height?: number;
   };
   title?: string;
   features?: Chance[];

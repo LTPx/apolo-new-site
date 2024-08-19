@@ -43,6 +43,8 @@ function Home(props: Props) {
       : "",
     textButton: hero?.heroCTA?.heroCTA,
     textLearnMore: hero?.learnMore || "",
+    widthImageHero: hero?.heroImage?.width || undefined,
+    heightImageHero: hero?.heroImage?.height || undefined,
   };
 
   const startupIntroParams = {
@@ -122,6 +124,8 @@ function Home(props: Props) {
           imgHero={heroParams.imgHero}
           textButton={heroParams.textButton || ""}
           textLearnMore={heroParams.textLearnMore || "Learn More"}
+          // width={heroParams.widthImageHero}
+          // height={heroParams.heightImageHero}
         />
       </section>
       <section>

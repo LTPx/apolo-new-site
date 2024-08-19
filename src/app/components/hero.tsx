@@ -6,10 +6,13 @@ export interface HeroProps {
   imgHero: string;
   textButton: string;
   textLearnMore: string;
+  width?: number;
+  height?: number;
 }
 
 export function Hero(props: HeroProps) {
-  const { title, description, imgHero, textButton, textLearnMore } = props;
+  const { title, description, imgHero, textButton, textLearnMore, width, height } = props;
+
   return (
     <div className="p-6 lg:px-8 flex flex-col lg:grid lg:grid-cols-3 lg:gap-4">
       <div className="lg:col-span-2 flex flex-col gap-2 justify-center lg:items-start lg:text-left">
@@ -35,8 +38,12 @@ export function Hero(props: HeroProps) {
       <div className="hidden lg:flex lg:col-span-1 mt-4 lg:mt-0">
         <img
           src={imgHero}
-          alt={"hero-cover"}
-          className="object-cover object-center h-full w-full"
+          alt="hero-cover"
+          style={{
+            width: width ? `${width}px` : '100%',
+            height: height ? `${height}px` : '100%'
+          }}
+          className="object-cover object-center"
         />
       </div>
     </div>
