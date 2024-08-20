@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { getWebsiteData } from "@/app/_services/api";
 import TermsAndConditionsPage from "./terms-and-conditions-page";
 
-export async function TermsAndConditions(nextParams: {
+async function TermsAndConditions(nextParams: {
   params: { locale: "en" | "fr" };
 }) {
   const {
