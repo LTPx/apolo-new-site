@@ -1,12 +1,12 @@
 import React from "react";
-import Hero from "./components/hero";
-import StartupStudio from "./components/startup-studio";
-import FeaturesSections from "./components/features-section";
-import AlreadyLaunched from "./components/already-launched";
-import TeamSection from "./components/team-sections";
-import Banner from "./components/banner";
-import Sponsors from "./components/sponsors";
-import { ApoloLayout } from "./_interfaces/layout";
+import Hero from "./../components/hero";
+import StartupStudio from "./../components/startup-studio";
+import FeaturesSections from "./../components/features-section";
+import AlreadyLaunched from "./../components/already-launched";
+import TeamSection from "./../components/team-sections";
+import Banner from "./../components/banner";
+import Sponsors from "./../components/sponsors";
+import { ApoloLayout } from "./../_interfaces/layout";
 
 interface Props {
   data: ApoloLayout;

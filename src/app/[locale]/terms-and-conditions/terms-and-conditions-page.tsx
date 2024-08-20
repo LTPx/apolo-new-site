@@ -1,5 +1,5 @@
+import { Child, Page, TextElement } from "@/app/_interfaces/layout";
 import React from "react";
-import { Child, Page, TextElement } from "../_interfaces/layout";
 
 interface Props {
   page: Page;

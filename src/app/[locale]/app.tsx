@@ -1,14 +1,15 @@
-import { getWebsiteData } from "./_services/api";
-import Footer from "./components/footer";
-import Header from "./components/header";
+import { getWebsiteData } from "../_services/api";
+import Footer from "../components/footer";
+import Header from "../components/header";
 
 interface Props {
   children: any;
+  locale: 'en' | 'fr';
 }
 
 async function App(props: Props) {
-  const { children } = props;
-  const layoutData = await getWebsiteData();
+  const { children, locale } = props;
+  const layoutData = await getWebsiteData(locale);
   const header = layoutData.layout.find(
     (ly) => ly.blockType === "apolo-header"
   );

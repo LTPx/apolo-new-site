@@ -1,13 +1,17 @@
 import { Suspense } from "react";
-import { getWebsiteData } from "../_services/api";
+import { getWebsiteData } from "@/app/_services/api";
 import TermsAndConditionsPage from "./terms-and-conditions-page";
 
-export default async function TermsAndConditions() {
-  const data = await getWebsiteData();
+export async function TermsAndConditions(nextParams: {
+  params: { locale: "en" | "fr" };
+}) {
+  const {
+    params: { locale },
+  } = nextParams;
+  const data = await getWebsiteData(locale);
   const { pages } = data;
-  // console.log('page 1: ', pages[0])
   const page = pages.find((page) => page.pageName === "Terms and conditions");
-  console.log('page: ', page)
+  console.log("page: ", page);
   return (
     <Suspense fallback="Loading...">
       {page ? (
@@ -18,3 +22,5 @@ export default async function TermsAndConditions() {
     </Suspense>
   );
 }
+
+export default TermsAndConditions;
