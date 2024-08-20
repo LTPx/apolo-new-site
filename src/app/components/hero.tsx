@@ -5,13 +5,23 @@ export interface HeroProps {
   description: string;
   imgHero: string;
   textButton: string;
-  textLearnMore: string;
+  linkButton: string;
+  textLearnMore?: string;
   width?: number;
   height?: number;
 }
 
 export function Hero(props: HeroProps) {
-  const { title, description, imgHero, textButton, textLearnMore, width, height } = props;
+  const {
+    title,
+    description,
+    imgHero,
+    textButton,
+    textLearnMore,
+    width,
+    height,
+    linkButton,
+  } = props;
 
   return (
     <div className="p-6 lg:px-8 flex flex-col lg:grid lg:grid-cols-3 lg:gap-4">
@@ -22,17 +32,19 @@ export function Hero(props: HeroProps) {
         <p className="mt-5 text-xl leading-8 text-gray-600">{description}</p>
         <div className="mt-10 flex items-center gap-x-6 lg:flex-row">
           <Link
-            href="/"
+            href={linkButton}
             className="rounded-lg bg-primary px-6 py-3 text-md font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             {textButton}
           </Link>
-          {/* <Link
-            href="/"
-            className="lg:mt-0 text-md font-semibold leading-6 text-gray-900"
-          >
-            {textLearnMore} <span aria-hidden="true">→</span>
-          </Link> */}
+          {textLearnMore && (
+            <Link
+              href="/"
+              className="lg:mt-0 text-md font-semibold leading-6 text-gray-900"
+            >
+              {textLearnMore} <span aria-hidden="true">→</span>
+            </Link>
+          )}
         </div>
       </div>
       <div className="hidden lg:flex lg:col-span-1 mt-4 lg:mt-0">
@@ -40,8 +52,8 @@ export function Hero(props: HeroProps) {
           src={imgHero}
           alt="hero-cover"
           style={{
-            width: width ? `${width}px` : '100%',
-            height: height ? `${height}px` : '100%'
+            width: width ? `${width}px` : "100%",
+            height: height ? `${height}px` : "100%",
           }}
           className="object-cover object-center"
         />

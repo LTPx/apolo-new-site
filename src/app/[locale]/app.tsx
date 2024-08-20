@@ -17,7 +17,7 @@ async function App(props: Props) {
   const widthLogo = header?.logoImage?.sizes.tablet.width || undefined;
   const heightLogo = header?.logoImage?.sizes.tablet.height || undefined;
   const logoUrl = `https://admin.joinapolo.com${logoUrlBase}`;
-  const title = header?.navigationCTA?.CTA || "Join Apolo";
+  const title = header?.companyName || "Join Apolo";
   const link = header?.navigationCTA?.CTALink || "";
 
   return (

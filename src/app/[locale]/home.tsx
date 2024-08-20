@@ -42,7 +42,8 @@ function Home(props: Props) {
       ? `https://admin.joinapolo.com${hero?.heroImage?.url}`
       : "",
     textButton: hero?.heroCTA?.heroCTA,
-    textLearnMore: hero?.learnMore || "",
+    linkButton: hero?.heroCTA?.heroCTALink,
+    textLearnMore: hero?.learnMore ,
     widthImageHero: hero?.heroImage?.width || undefined,
     heightImageHero: hero?.heroImage?.height || undefined,
   };
@@ -127,7 +128,8 @@ function Home(props: Props) {
           description={heroParams.description || ""}
           imgHero={heroParams.imgHero}
           textButton={heroParams.textButton || ""}
-          textLearnMore={heroParams.textLearnMore || "Learn More"}
+          linkButton={heroParams.linkButton || "/" }
+          textLearnMore={heroParams.textLearnMore}
           // width={heroParams.widthImageHero}
           // height={heroParams.heightImageHero}
         />
