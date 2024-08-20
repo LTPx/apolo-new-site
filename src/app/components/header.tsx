@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -39,7 +40,7 @@ export function Header(props: HeaderProps) {
       <div className="container mx-auto flex items-center justify-between p-6 lg:px-8">
         <div className="flex items-center">
           <Link href="/">
-          <img
+            <img
               src={logo}
               alt="logo-header"
               style={{
@@ -54,13 +55,17 @@ export function Header(props: HeaderProps) {
         </div>
         <div className="flex lg:flex lg:flex-1 lg:justify-end items-center gap-6">
           <div className="flex gap-4 items-center">
-            <span className="text-md font-semibold text-gray-700 hover:text-primary cursor-pointer">
-              en
-            </span>
+            <Link href="/en">
+              <span className="text-md font-semibold text-gray-700 hover:text-primary cursor-pointer">
+                en
+              </span>
+            </Link>
             <span>/</span>
-            <span className="text-md font-semibold text-gray-700 hover:text-primary cursor-pointer">
-              fr
-            </span>
+            <Link href="/fr">
+              <span className="text-md font-semibold text-gray-700 hover:text-primary cursor-pointer">
+                fr
+              </span>
+            </Link>
           </div>
           <Link
             href={linkBtn}
