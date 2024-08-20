@@ -6,11 +6,12 @@ interface HeaderProps {
   logo: string;
   titleBtn: string;
   width?: number;
-  height?: number
+  height?: number;
+  linkBtn: string;
 }
 
 export function Header(props: HeaderProps) {
-  const { logo, titleBtn, width, height } = props;
+  const { logo, titleBtn, width, height, linkBtn } = props;
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -62,7 +63,7 @@ export function Header(props: HeaderProps) {
             </span>
           </div>
           <Link
-            href="/"
+            href={linkBtn}
             className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             {titleBtn}

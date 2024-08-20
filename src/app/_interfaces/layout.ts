@@ -40,6 +40,10 @@ export interface Layout {
   teamMembers?: TeamMember[];
   ctas?: Cta[];
   image?: Image;
+  navigationCTA?: {
+    CTA: string;
+    CTALink: string;
+  };
 }
 
 export interface Chance {
