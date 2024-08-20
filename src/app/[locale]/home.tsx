@@ -102,7 +102,7 @@ function Home(props: Props) {
     buttons:
       cta?.ctas?.map((cta) => {
         return {
-          link: "",
+          link: cta.ctaLink || '/',
           title: cta.ctaText,
         };
       }) || [],
