@@ -74,9 +74,13 @@ function Home(props: Props) {
 
   const launchedParams = {
     title: launched?.title,
-    launched: launched?.companies?.map(
-      (company) => `https://admin.joinapolo.com${company.companyLogo.url}`
-    ),
+    launched: launched?.companies?.map((company) => {
+      return {
+        img: `https://admin.joinapolo.com${company.companyLogo.url}`,
+        name: company.companyName,
+        url: company.companyLink
+      }
+    }),
   };
 
   const teamParams = {
@@ -145,7 +149,6 @@ function Home(props: Props) {
         <AlreadyLaunched
           title={launchedParams.title || ""}
           launched={launchedParams.launched || []}
-          urlLink=""
         />
       </section>
       <section>
