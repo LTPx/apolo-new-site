@@ -60,7 +60,7 @@ export function Footer(props: FooterProps) {
               </span>
               <Link
                 className="inline-block text-white underline transition hover:text-primary"
-                href="/terms-and-conditions"
+                href="/en/terms-and-conditions"
               >
                 Terms & Conditions
               </Link>
