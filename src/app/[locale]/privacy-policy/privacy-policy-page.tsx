@@ -11,14 +11,14 @@ function PrivacyPolicyPage(props: Props) {
   const renderElement = (element: TextElement) => {
     switch (element.type) {
       case "h2":
-        return <h2>{renderChildren(element.children)}</h2>;
+        return <h2 className="mb-4">{renderChildren(element.children)}</h2>;
       case "h4":
-        return <h4>{renderChildren(element.children)}</h4>;
+        return <h4 className="text-lg text-black mt-4 mb-2">{renderChildren(element.children)}</h4>;
       case "ul":
         return (
-          <ul>
+          <ul className="list-disc pl-6 my-2 text-[14px]">
             {element.children.map((li, index) => (
-              <li key={index}>{renderChildren(li.children)}</li>
+              <li key={index} className="mb-2">{renderChildren(li.children)}</li>
             ))}
           </ul>
         );
@@ -26,28 +26,26 @@ function PrivacyPolicyPage(props: Props) {
         return <li>{renderChildren(element.children)}</li>;
       case "link":
         return (
-          <a href={element.url} target={element.newTab ? "_blank" : "_self"}>
+          <a className="underline" href={element.url} target={element.newTab ? "_blank" : "_self"}>
             {renderChildren(element.children)}
           </a>
         );
       default:
-        return <p>{renderChildren(element.children)}</p>;
+        return <p className="text-base mt-4">{renderChildren(element.children)}</p>;
     }
   };
 
-  // Función para renderizar los hijos del elemento
   const renderChildren = (children: Child[]) => {
     return children.map((child, index) => {
       if (child.bold) {
-        return <strong key={index}>{child.text}</strong>;
+        return <strong className='text-base font-bold mt-2' key={index}>{child.text}</strong>;
       }
       return <span key={index}>{child.text}</span>;
     });
   };
 
   return (
-    <div className="pa">
-      <h1>{page.pageName}</h1>
+    <div className="container mx-auto pb-40 lg:px-8">
       {page.layout.map((block) => (
         <div key={block.id} className="block">
           {block.text?.map((element, index) => (

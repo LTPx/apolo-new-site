@@ -48,6 +48,7 @@ const config: Config = {
         var: ['Ottertype-Var', 'sans-serif'],
         regular: ['Ottertype-Regular', 'sans-serif'],
         bold: ['Ottertype-Bold', 'sans-serif'],
+        black: ['Ottertype-Black', 'sans-serif'],
       },
     },
   },
