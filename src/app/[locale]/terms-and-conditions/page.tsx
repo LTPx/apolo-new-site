@@ -10,8 +10,7 @@ async function TermsAndConditions(nextParams: {
   } = nextParams;
   const data = await getWebsiteData(locale);
   const { pages } = data;
-  const page = pages.find((page) => page.pageName === "Terms and conditions");
-  console.log("page: ", page);
+  const page = pages.find((page) => page.pageName === "TermsAndConditions");
   return (
     <Suspense fallback="Loading...">
       {page ? (
