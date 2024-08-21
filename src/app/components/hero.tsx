@@ -26,7 +26,7 @@ export function Hero(props: HeroProps) {
   return (
     <div className="p-6 lg:px-8 flex flex-col lg:grid lg:grid-cols-3 lg:gap-4">
       <div className="lg:col-span-2 flex flex-col gap-2 justify-center lg:items-start lg:text-left">
-        <h1 className="lg:w-[400px] text-center lg:text-left">
+        <h1 className="lg:w-[480px] text-center lg:text-left">
           {title}
         </h1>
         <p className="mt-5 text-center lg:text-left lg:w-[351px]">{description}</p>
