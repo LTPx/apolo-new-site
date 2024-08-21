@@ -33,7 +33,7 @@ export function Footer(props: FooterProps) {
                     href="mailto:hello@joinapolo.com"
                   >
                     <span className="flex-1 text-white transition hover:text-primary">
-                      hello(at)joinapolo.com
+                      hello@joinapolo.com
                     </span>
                   </Link>
                 </li>
@@ -67,13 +67,13 @@ export function Footer(props: FooterProps) {
               <span>&middot;</span>
               <Link
                 className="inline-block text-white underline transition hover:text-primary"
-                href="/"
+                href="/en/privacy-policy"
               >
                 Privacy Policy
               </Link>
             </p>
             <p className="mt-4 text-sm text-white-light sm:order-first sm:mt-0">
-              &copy; 2022 Company Name
+              &copy; 2024 Company Name
             </p>
           </div>
         </div>
