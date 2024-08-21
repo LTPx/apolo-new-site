@@ -15,10 +15,10 @@ export function MemberTeam(props: MenberTeamProps) {
         className="aspect-square w-full rounded-lg object-cover group-hover:scale-105 transition duration-500"
       />
       <div className="mt-3">
-        <h3 className="font-medium text-xl text-gray-900 group-hover:underline group-hover:underline-offset-4">
+        <h3>
           {name}
         </h3>
-        <p className="mt-1 text-sm text-gray-700">{profession}</p>
+        <p className="mt-1">{profession}</p>
       </div>
     </div>
   );

@@ -14,16 +14,21 @@ interface BannerProps {
 export function Banner(props: BannerProps) {
   const { title, subtitle, buttons } = props;
   return (
-    <div className="mx-auto px-6 lg:px-8 py-20 lg:py-32 lg:flex lg:items-center">
+    <div className="mx-auto px-6 lg:px-8 py-20 lg:py-12 lg:flex lg:items-center">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-extrabold sm:text-5xl">{title}</h2>
-        <p className="mt-4 sm:text-xl/relaxed">{subtitle}</p>
+        <h2>{title}</h2>
+        <p className="mt-4">{subtitle}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           {buttons.map((btn, index) => (
             <Link
               href={btn.link}
               key={index}
-              className="rounded-lg bg-primary px-4 py-3 text font-bold text-white shadow hover:bg-primary-600 focus:outline-none focus:ring active:bg-primary-400 sm:w-auto"
+              className="font-var h-[37px] px-[15px] rounded-[4px] flex items-center justify-center rounded-lg bg-primary  text-white hover:bg-primary-600"
+              style={{
+                fontSize: '20px',
+                lineHeight: '22px',
+                fontWeight: 664
+              }}
             >
               {btn.title}
             </Link>

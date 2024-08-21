@@ -8,15 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // fontFamily: {
-      //   'inter': ['Inter', 'sans-serif'],
-      // },
-      // fontSize: {
-      //   'body-apolo': ['13px', '15.21px'],
-      // },
-      // fontWeight: {
-      //   'body-apolo': '500',
-      // },
       colors: {
         primary: {
           100: '#ffd5eb',
@@ -52,24 +43,14 @@ const config: Config = {
           dark: '#888ea8',
         },
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            'h1': {
-              fontSize: '58px',
-              fontWeight: '900',
-              lineHeight: '49.3px',
-            },
-          },
-        },
-      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        var: ['Ottertype-Var', 'sans-serif'],
+        regular: ['Ottertype-Regular', 'sans-serif'],
+        bold: ['Ottertype-Bold', 'sans-serif'],
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 };
 export default config;

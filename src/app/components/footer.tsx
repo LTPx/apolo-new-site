@@ -8,33 +8,36 @@ interface FooterProps {
 export function Footer(props: FooterProps) {
   const { address, logoFooter } = props;
   return (
-    <footer className="bg-black">
+    <footer className="bg-black-footer">
       <div className="mx-auto container px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 pb-16">
           <div>
             <div className="flex justify-start text-teal-600">
-              <img src={logoFooter} alt="logo-footer" />
+              <img
+                src={"/images/apolo_logo NegativePNG_RVB.png"}
+                alt="logo-footer"
+              />
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
             <div className="text-left">
-              <p className="text-lg font-medium text-white">ADDRESS</p>
-              <ul className="mt-5 space-y-4 text-sm">
-                <li className="text-white-light">{address}</li>
-              </ul>
+              <h3 className="text-white">ADDRESS</h3>
+              <div className="mt-5 space-y-4 text-sm">
+                <p className="text-[#898989]">{address}</p>
+              </div>
             </div>
             <div className="text-left">
-              <p className="text-lg font-medium text-white">CONTACT</p>
+              <h3 className="text-white">CONTACT</h3>
               <ul className="mt-5 space-y-4 text-sm">
                 <li>
                   <Link
                     className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
                     href="mailto:hello@joinapolo.com"
                   >
-                    <span className="flex-1 text-white transition hover:text-primary">
-                      hello@joinapolo.com
-                    </span>
+                    <p className="flex-1 text-white transition hover:text-primary">
+                      hello(at)joinapolo.com
+                    </p>
                   </Link>
                 </li>
                 <li>
@@ -43,9 +46,9 @@ export function Footer(props: FooterProps) {
                     href="tel:+41215521000"
                     target="_blank"
                   >
-                    <span className="flex-1 text-white transition hover:text-primary">
+                    <p className="flex-1 text-white transition hover:text-primary">
                       +41 21 552 10 00
-                    </span>
+                    </p>
                   </Link>
                 </li>
               </ul>
@@ -54,27 +57,32 @@ export function Footer(props: FooterProps) {
         </div>
         <div className="mt-12 border-t border-gray-100 pt-6">
           <div className="text-center sm:flex sm:justify-between sm:text-left">
-            <p className="text-sm text-gray-500">
-              <span className="text-white-light block sm:inline">
-                All rights reserved.
-              </span>
+            <div className="flex gap-4 mt-4 items-center">
+              <Link href={"/"}>
+                <p className="text-white hover:text-primary">Data management</p>
+              </Link>
+              <Link href={"/"}>
+                <p className="text-white hover:text-primary">- Disclaimer -</p>
+              </Link>
+              <p className="text-white sm:mt-0">
+                &copy; Apolo SA 2024
+              </p>
+            </div>
+            <div className="flex gap-4 items-center">
+              <p className="text-white block sm:inline">All rights reserved.</p>
               <Link
                 className="inline-block text-white underline transition hover:text-primary"
                 href="/en/terms-and-conditions"
               >
-                Terms & Conditions
+                <p>Terms & Conditions</p>
               </Link>
-              <span>&middot;</span>
               <Link
                 className="inline-block text-white underline transition hover:text-primary"
                 href="/en/privacy-policy"
               >
-                Privacy Policy
+                <p>Privacy Policy</p>
               </Link>
-            </p>
-            <p className="mt-4 text-sm text-white-light sm:order-first sm:mt-0">
-              &copy; 2024 Company Name
-            </p>
+            </div>
           </div>
         </div>
       </div>

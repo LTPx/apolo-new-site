@@ -10,9 +10,9 @@ export function FeatureStartup(props: FeatureStartupProps) {
     <div className="lg:p-6">
       <div className="flex gap-2 items-center">
         <img className="h-4 w-4" src={imageSvg}/>
-        <h2 className="text-xl font-bold">{title}</h2>
+        <h3>{title}</h3>
       </div>
-      <p className="mt-4 text-sm">{description}</p>
+      <p className="mt-4">{description}</p>
     </div>
   );
 }

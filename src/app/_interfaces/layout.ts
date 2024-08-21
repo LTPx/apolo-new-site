@@ -97,6 +97,7 @@ export interface Company {
   companyName: string;
   companyLogo: FeatureIcon;
   id: string;
+  href?: string;
   companyLink?: string;
 }
 

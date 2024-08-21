@@ -79,7 +79,7 @@ function Home(props: Props) {
       return {
         img: `https://admin.joinapolo.com${company.companyLogo.url}`,
         name: company.companyName,
-        url: company.companyLink
+        url: company.href
       }
     }),
   };
@@ -112,12 +112,14 @@ function Home(props: Props) {
   const sponsorsParams = {
     title: sponsors?.title || "",
     subtitle: sponsors?.subtitle || "",
-    sponsorsImageUrl:
-      sponsors?.companies?.map((company) => {
-        return company.companyLogo.url
-          ? `https://admin.joinapolo.com${company.companyLogo.url}`
-          : defaultImage;
-      }) || [],
+    sponsorsImageUrl: sponsors?.companies?.map((company) => ({
+      imageUrl: company.companyLogo.url
+        ? `https://admin.joinapolo.com${company.companyLogo.url}`
+        : defaultImage,
+      linkUrl: company.companyLink
+        ? company.companyLink
+        : '',
+    })) || [],
   };
 
   return (

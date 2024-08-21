@@ -1,0 +1,91 @@
+/* ---------------------------------------------
+   Fonts
+--------------------------------------------- */
+@font-face {
+    font-family: 'Ottertype-Black';
+    src: url('/fonts/Ottertype-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Ottertype-Bold';
+    src: url('/fonts/Ottertype-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Ottertype-Var';
+    src: url('/fonts/OttertypeVAR.ttf') format('truetype');
+    font-weight: 100 900;
+    font-stretch: 75% 125%;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ottertype-Regular';
+  src: url('/fonts/Ottertype-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+  h1 {
+    font-family: 'Ottertype-Black', sans-serif;
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 49.3px;
+  }
+
+  h2 {
+    font-family: 'Ottertype-Bold', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 44px;
+  }
+
+  h3 {
+    font-family: 'Ottertype-Bold', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 26.4px;
+  }
+
+  h4 {
+    font-family: 'Ottertype-Bold', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 11px;
+    color: #F20081;
+  }
+
+  p {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15.21px;
+  }
+
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  
+    h2 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  
+    h3 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  
+    p {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+  
