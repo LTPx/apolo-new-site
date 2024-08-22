@@ -14,7 +14,7 @@ interface BannerProps {
 export function Banner(props: BannerProps) {
   const { title, subtitle, buttons } = props;
   return (
-    <div className="mx-auto px-6 lg:px-8 py-20 lg:py-12 lg:flex lg:items-center">
+    <div className="mx-auto px-6 lg:px-8 py-10 lg:py-12 lg:flex lg:items-center">
       <div className="mx-auto max-w-2xl text-center">
         <h2>{title}</h2>
         <p className="mt-4">{subtitle}</p>

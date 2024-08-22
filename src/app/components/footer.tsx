@@ -7,6 +7,8 @@ interface FooterProps {
 
 export function Footer(props: FooterProps) {
   const { address, logoFooter } = props;
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-black-footer">
       <div className="mx-auto container px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-16">
@@ -16,6 +18,7 @@ export function Footer(props: FooterProps) {
               <img
                 src={"/images/apolo_logo NegativePNG_RVB.png"}
                 alt="logo-footer"
+                className={"h-[80px] w-[-60] lg:h-full lg:w-full"}
               />
             </div>
           </div>
@@ -56,17 +59,15 @@ export function Footer(props: FooterProps) {
           </div>
         </div>
         <div className="mt-12 border-t border-gray-100 pt-6">
-          <div className="text-center sm:flex sm:justify-between sm:text-left">
-            <div className="flex gap-4 mt-4 items-center">
+          <div className="flex flex-col gap-10 text-center lg:flex-row lg:justify-between lg:text-left">
+            <div className="flex gap-4 mt-4 items-center justify-center">
               <Link href={"/"}>
                 <p className="text-white hover:text-primary">Data management</p>
               </Link>
               <Link href={"/"}>
-                <p className="text-white hover:text-primary">- Disclaimer -</p>
+                <p className="text-white hover:text-primary">Disclaimer</p>
               </Link>
-              <p className="text-white sm:mt-0">
-                &copy; Apolo SA 2024
-              </p>
+              <p className="text-white sm:mt-0">&copy; Apolo SA {currentYear}</p>
             </div>
             <div className="flex gap-4 items-center">
               <p className="text-white block sm:inline">All rights reserved.</p>

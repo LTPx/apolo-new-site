@@ -17,7 +17,7 @@ export function Sponsors(props: SponsorsProps) {
         <h2>{title}</h2>
         <p className="mt-4">{subtitle}</p>
       </div>
-      <div className="mx-auto mt-14 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+      <div className="mx-auto mt-14 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-2 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
         {sponsorsImageUrl.map((item, index) => (
           <Link href={item.linkUrl} target="_blank" key={index}>
             <img

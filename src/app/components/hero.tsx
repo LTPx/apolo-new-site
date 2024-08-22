@@ -24,8 +24,22 @@ export function Hero(props: HeroProps) {
   } = props;
 
   return (
-    <div className="p-6 lg:px-8 flex flex-col lg:grid lg:grid-cols-3 lg:gap-4">
-      <div className="lg:col-span-2 flex flex-col gap-2 justify-center lg:items-start lg:text-left">
+    <div className="px-6 lg:px-8 flex flex-col lg:grid lg:grid-cols-3 lg:gap-4">
+      {/* Imagen */}
+      <div className="lg:col-span-1 lg:order-2 mt-4 lg:mt-0 flex justify-center">
+        <img
+          src={imgHero}
+          alt="hero-cover"
+          style={{
+            width: width ? `${width}px` : "100%",
+            height: height ? `${height}px` : "100%",
+          }}
+          className="object-cover object-center"
+        />
+      </div>
+      
+      {/* Contenido del texto */}
+      <div className="lg:col-span-2 lg:order-1 flex flex-col gap-2 justify-center lg:items-start lg:text-left">
         <h1 className="lg:w-[480px] text-center lg:text-left">
           {title}
         </h1>
@@ -56,17 +70,6 @@ export function Hero(props: HeroProps) {
             </Link>
           )}
         </div>
-      </div>
-      <div className="hidden lg:flex lg:col-span-1 mt-4 lg:mt-0">
-        <img
-          src={imgHero}
-          alt="hero-cover"
-          style={{
-            width: width ? `${width}px` : "100%",
-            height: height ? `${height}px` : "100%",
-          }}
-          className="object-cover object-center"
-        />
       </div>
     </div>
   );

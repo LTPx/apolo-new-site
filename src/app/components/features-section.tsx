@@ -37,7 +37,7 @@ export function FeaturesSections(props: FeaturesSectionsProps) {
         <img
           src={mainImage}
           alt={"features-img"}
-          className="object-cover object-center h-full w-full hidden lg:flex"
+          className="object-cover object-center h-full w-full lg:flex"
         />
       </div>
     </div>

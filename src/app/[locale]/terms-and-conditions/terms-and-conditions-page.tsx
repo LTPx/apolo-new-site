@@ -51,7 +51,7 @@ function TermsAndConditionsPage(props: Props) {
   };
 
   return (
-    <div className="container mx-auto pb-40 lg:px-8">
+    <div className="container mx-auto pb-40 px-6 lg:px-8">
       {page.layout.map((block) => (
         <div key={block.id} className="block">
           {block.text?.map((element, index) => (
