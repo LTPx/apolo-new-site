@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 interface FooterProps {
   address: string;
@@ -69,13 +69,13 @@ export function Footer(props: FooterProps) {
             <div className="flex gap-4 items-center justify-center">
               <Link
                 className="inline-block text-white underline transition hover:text-primary"
-                href="/en/terms-and-conditions"
+                href="/terms-and-conditions"
               >
                 <p>Terms & Conditions</p>
               </Link>
               <Link
                 className="inline-block text-white underline transition hover:text-primary"
-                href="/en/privacy-policy"
+                href="/privacy-policy"
               >
                 <p>Privacy Policy</p>
               </Link>

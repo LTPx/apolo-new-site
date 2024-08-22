@@ -7,7 +7,6 @@ interface Props {
 
 function TermsAndConditionsPage(props: Props) {
   const { page } = props;
-  console.log(page.layout)
 
   const renderElement = (element: TextElement) => {
     switch (element.type) {
