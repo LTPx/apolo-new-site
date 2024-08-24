@@ -16,18 +16,17 @@ interface TeamSectionProps {
 
 export function TeamSection(props: TeamSectionProps) {
   const { members, title, description, social } = props;
+
   return (
     <div className="mx-auto px-6 lg:px-8">
-      <h2>
-        {title}
-      </h2>
-      <p className="mt-6">{description}</p>
+      <h2 className="text-2xl font-bold">{title}</h2>
+      <p className="mt-6 text-lg">{description}</p>
       <div className="mt-10 overflow-hidden">
-        <div className="flex flex-wrap justify-center gap-4 lg:grid lg:grid-cols-3 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {members.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-80 lg:flex-shrink lg:w-auto snap-start pb-4"
+              className="flex-shrink-0 snap-start pb-4"
             >
               <MemberTeam
                 img={item.img}

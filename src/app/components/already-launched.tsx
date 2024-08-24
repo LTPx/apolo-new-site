@@ -12,7 +12,7 @@ interface AlreadyLaunchedProps {
 export function AlreadyLaunched(props: AlreadyLaunchedProps) {
   const { launched, title } = props;
   return (
-    <div className="bg-white py-10 lg:py-18">
+    <div className="bg-body py-10 lg:py-18">
       <div className="mx-auto px-6 lg:px-8">
         <h2>
           {title}

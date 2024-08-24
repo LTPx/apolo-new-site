@@ -42,6 +42,9 @@ const config: Config = {
           light: '#b9bdc4',
           dark: '#888ea8',
         },
+        body: {
+          DEFAULT: '#F4F4F2'
+        }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

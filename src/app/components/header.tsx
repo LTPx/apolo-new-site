@@ -6,13 +6,11 @@ import Link from "next/link";
 interface HeaderProps {
   logo: string;
   titleBtn: string;
-  width?: number;
-  height?: number;
   linkBtn: string;
 }
 
 export function Header(props: HeaderProps) {
-  const { logo, titleBtn, width, height, linkBtn } = props;
+  const { logo, titleBtn, linkBtn } = props;
   const [isSticky, setIsSticky] = useState(false);
   const [currentLocale, setCurrentLocale] = useState<string>("en");
 
@@ -43,22 +41,18 @@ export function Header(props: HeaderProps) {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
+      className={`sticky top-0 z-50 bg-body transition-all duration-300 ${
         isSticky ? "py-2" : "py-4"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between p-6 lg:px-8">
+      <div className="container mx-auto flex items-center justify-between lg:py-2 sm:py-5 px-4 sm: lg:px-4">
         <div className="flex items-center">
           <Link href="/">
             <img
               src={logo}
               alt="logo-header"
-              style={{
-                width: width ? `${width}px` : undefined,
-                height: height ? `${height}px` : undefined,
-              }}
               className={`transition-all duration-300 ${
-                isSticky ? "h-9 lg:h-12" : "h-8 lg:h-14"
+                isSticky ? "h-9 lg:h-[70px]" : "h-8 lg:h-[80px]"
               }`}
             />
           </Link>
@@ -69,8 +63,8 @@ export function Header(props: HeaderProps) {
               <span
                 className={`cursor-pointer ${
                   currentLocale === "en"
-                    ? "font-var text-[24px]"
-                    : "font-regular text-[18px]"
+                    ? "font-bold text-[19px]"
+                    : "font-light text-[19px]"
                 } hover:text-primary`}
               >
                 en
@@ -81,8 +75,8 @@ export function Header(props: HeaderProps) {
               <span
                 className={`cursor-pointer ${
                   currentLocale === "fr"
-                    ? "font-var text-[24px]"
-                    : "font-regular text-[18px]"
+                    ? "font-bold text-[19px]"
+                    : "font-light text-[19px]"
                 } hover:text-primary`}
               >
                 fr

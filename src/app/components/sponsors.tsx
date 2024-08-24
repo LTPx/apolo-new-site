@@ -23,7 +23,7 @@ export function Sponsors(props: SponsorsProps) {
             <img
               src={item.imageUrl}
               alt={`sponsor ${index + 1}`}
-              className="col-span-2 lg:col-span-1 lg:h-[250px] w-full object-contain transition duration-500 group-hover:scale-105 sm:h-[100px]"
+              className="col-span-2 lg:col-span-1 lg:h-[80px] w-full object-contain transition duration-500 group-hover:scale-105 sm:h-[70px]"
             />
           </Link>
         ))}

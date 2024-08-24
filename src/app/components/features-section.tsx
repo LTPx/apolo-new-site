@@ -34,11 +34,13 @@ export function FeaturesSections(props: FeaturesSectionsProps) {
             </dl>
           </div>
         </div>
+        <div className="flex justify-center pt-4">
         <img
           src={mainImage}
           alt={"features-img"}
-          className="object-cover object-center h-full w-full lg:flex"
-        />
+          className="object-cover h-[140px] w-[230px] sm:h-[200px] sm:w-[350px] lg:h-[260px] lg:w-[430px]"
+          />
+        </div>
       </div>
     </div>
   );
