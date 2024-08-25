@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BTN_CLASS } from "../constants";
 
 interface ButtonsProps {
   link: string;
@@ -23,12 +24,7 @@ export function Banner(props: BannerProps) {
             <Link
               href={btn.link}
               key={index}
-              className="font-var h-[37px] px-[15px] rounded-[4px] flex items-center justify-center rounded-lg bg-primary  text-white hover:bg-primary-600"
-              style={{
-                fontSize: '20px',
-                lineHeight: '22px',
-                fontWeight: 664
-              }}
+              className={BTN_CLASS}
             >
               {btn.title}
             </Link>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { BTN_CLASS } from "../constants";
 
 interface HeaderProps {
   logo: string;
@@ -85,12 +86,7 @@ export function Header(props: HeaderProps) {
           </div>
           <Link
             href={linkBtn}
-            className="font-var px-[15px] bg-primary h-[37px] flex items-center justify-center rounded-[4px] text-white hover:bg-primary-600"
-            style={{
-              fontSize: "20px",
-              lineHeight: "22px",
-              fontWeight: 664,
-            }}
+            className={BTN_CLASS}
           >
             {titleBtn}
           </Link>

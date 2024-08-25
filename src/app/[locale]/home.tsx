@@ -132,8 +132,6 @@ function Home(props: Props) {
           textButton={heroParams.textButton || ""}
           linkButton={heroParams.linkButton || "/" }
           textLearnMore={heroParams.textLearnMore}
-          // width={heroParams.widthImageHero}
-          // height={heroParams.heightImageHero}
         />
       </section>
       <section>
