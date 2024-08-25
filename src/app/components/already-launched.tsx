@@ -19,9 +19,9 @@ export function AlreadyLaunched(props: AlreadyLaunchedProps) {
         </h2>
         <div className="mx-auto mt-14 grid max-w-2xl grid-cols-3 items-center gap-x-8 gap-y-10 sm:grid-cols-5 sm:max-w-2xl sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
           {launched.map((item, index) => (
-            <>
+            <div key={index}>
               {item.url ? (
-                <Link target='_blank' href={item.url || "#"} key={index}>
+                <Link target='_blank' href={item.url || "#"}>
                   <img
                     className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
                     src={item.img}
@@ -32,7 +32,6 @@ export function AlreadyLaunched(props: AlreadyLaunchedProps) {
                 </Link>
               ) : (
                 <img
-                  key={index}
                   className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
                   src={item.img}
                   alt={item.name}
@@ -40,7 +39,7 @@ export function AlreadyLaunched(props: AlreadyLaunchedProps) {
                   height="48"
                 />
               )}
-            </>
+            </div>
           ))}
         </div>
       </div>
