@@ -12,7 +12,7 @@ export function MemberTeam(props: MenberTeamProps) {
       <img
         src={img}
         alt={alt}
-        className="aspect-1-1 w-full rounded-lg object-cover"
+        className="w-full rounded-lg object-cover"
       />
       <div className="mt-3">
         <h3>

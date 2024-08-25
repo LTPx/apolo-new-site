@@ -16,9 +16,9 @@ export function Footer(props: FooterProps) {
           <div>
             <div className="flex justify-start text-teal-600">
               <img
-                src={"/images/apolo_logo NegativePNG_RVB.png"}
-                alt="logo-footer"
-                className={"h-[80px] w-[-60] lg:h-full lg:w-full"}
+                src="/images/apolo_logo_negative.png"
+                alt="apolo-logo"
+                className="h-[80px] w-[-60] lg:h-full lg:w-full"
               />
             </div>
           </div>
