@@ -15,9 +15,9 @@ export function MemberTeam(props: MenberTeamProps) {
         className="w-full rounded-lg object-cover"
       />
       <div className="mt-3">
-        <h3>
+        <h2>
           {name}
-        </h3>
+        </h2>
         <p className="mt-1">{profession}</p>
       </div>
     </div>
