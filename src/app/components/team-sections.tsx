@@ -20,7 +20,7 @@ export function TeamSection(props: TeamSectionProps) {
   return (
     <div className="mx-auto px-6 lg:px-8">
       <h2 className="font-bold">{title}</h2>
-      <p className="mt-6 text-lg">{description}</p>
+      <p className="mt-6">{description}</p>
       <div className="mt-10 overflow-hidden">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {members.map((item, index) => (
