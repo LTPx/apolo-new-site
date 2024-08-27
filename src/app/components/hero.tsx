@@ -31,7 +31,7 @@ export function Hero(props: HeroProps) {
         <p className="mt-5 text-left lg:w-[351px]">
           {description}
         </p>
-        <div className="mt-10 flex items-center justify-center gap-x-6 lg:flex-row">
+        <div className="mt-8 lg:mt-10 flex  gap-x-6 lg:flex-row">
           <Link
             href={linkButton}
             className={BTN_CLASS}

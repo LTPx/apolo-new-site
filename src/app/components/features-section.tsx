@@ -38,7 +38,7 @@ export function FeaturesSections(props: FeaturesSectionsProps) {
         <img
           src={mainImage}
           alt={"features-img"}
-          className="object-cover h-[140px] w-[230px] sm:h-[200px] sm:w-[350px] lg:h-[260px] lg:w-[430px]"
+          className="object-cover h-[140px] w-[230px] sm:h-[200px] sm:w-[350px] lg:h-[150px] lg:w-[250px]"
           />
         </div>
       </div>

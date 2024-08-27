@@ -43,7 +43,7 @@ function Home(props: Props) {
       : "",
     textButton: hero?.heroCTA?.heroCTA,
     linkButton: hero?.heroCTA?.heroCTALink,
-    textLearnMore: hero?.learnMore ,
+    textLearnMore: hero?.learnMore,
     widthImageHero: hero?.heroImage?.width || undefined,
     heightImageHero: hero?.heroImage?.height || undefined,
   };
@@ -79,8 +79,8 @@ function Home(props: Props) {
       return {
         img: `https://admin.joinapolo.com${company.companyLogo.url}`,
         name: company.companyName,
-        url: company.href
-      }
+        url: company.href,
+      };
     }),
   };
 
@@ -103,7 +103,7 @@ function Home(props: Props) {
     buttons:
       cta?.ctas?.map((cta) => {
         return {
-          link: cta.ctaLink || '/',
+          link: cta.ctaLink || "/",
           title: cta.ctaText,
         };
       }) || [],
@@ -112,69 +112,72 @@ function Home(props: Props) {
   const sponsorsParams = {
     title: sponsors?.title || "",
     subtitle: sponsors?.subtitle || "",
-    sponsorsImageUrl: sponsors?.companies?.map((company) => ({
-      imageUrl: company.companyLogo.url
-        ? `https://admin.joinapolo.com${company.companyLogo.url}`
-        : defaultImage,
-      linkUrl: company.companyLink
-        ? company.companyLink
-        : '',
-    })) || [],
+    sponsorsImageUrl:
+      sponsors?.companies?.map((company) => ({
+        imageUrl: company.companyLogo.url
+          ? `https://admin.joinapolo.com${company.companyLogo.url}`
+          : defaultImage,
+        linkUrl: company.companyLink ? company.companyLink : "",
+      })) || [],
   };
 
   return (
-    <div className="container mx-auto flex flex-col gap-20">
-      <section>
-        <Hero
-          title={heroParams.title}
-          description={heroParams.description || ""}
-          imgHero={heroParams.imgHero}
-          textButton={heroParams.textButton || ""}
-          linkButton={heroParams.linkButton || "/" }
-          textLearnMore={heroParams.textLearnMore}
-        />
-      </section>
-      <section>
-        <StartupStudio
-          title={startupIntroParams.title || ""}
-          studioFeatures={startupIntroParams.features || []}
-        />
-      </section>
-      <section>
-        <FeaturesSections
-          title={chanceSuccessParams.title || ""}
-          advantages={chanceSuccessParams.advantages || []}
-          mainImage={chanceSuccessParams.mainImage}
-        />
-      </section>
-      <section>
-        <AlreadyLaunched
-          title={launchedParams.title || ""}
-          launched={launchedParams.launched || []}
-        />
-      </section>
-      <section>
-        <TeamSection
-          title={teamParams.title || ""}
-          description={teamParams.description || ""}
-          members={teamParams.members || []}
-        />
-      </section>
-      <section>
-        <Banner
-          title={ctaParams.title}
-          subtitle={ctaParams.subtitle}
-          buttons={ctaParams.buttons}
-        />
-      </section>
-      <section className="pb-20">
-        <Sponsors
-          title={sponsorsParams.title}
-          subtitle={sponsorsParams.subtitle}
-          sponsorsImageUrl={sponsorsParams.sponsorsImageUrl}
-        />
-      </section>
-    </div>
+    <>
+      <div className="container mx-auto flex flex-col gap-0 lg:gap-20">
+        <section>
+          <Hero
+            title={heroParams.title}
+            description={heroParams.description || ""}
+            imgHero={heroParams.imgHero}
+            textButton={heroParams.textButton || ""}
+            linkButton={heroParams.linkButton || "/"}
+            textLearnMore={heroParams.textLearnMore}
+          />
+        </section>
+        <section>
+          <StartupStudio
+            title={startupIntroParams.title || ""}
+            studioFeatures={startupIntroParams.features || []}
+          />
+        </section>
+      </div>
+      <div className="container mt-16 lg:mt-20 mx-auto flex flex-col gap-16 md:gap-16 lg:gap-20">
+        <section>
+          <FeaturesSections
+            title={chanceSuccessParams.title || ""}
+            advantages={chanceSuccessParams.advantages || []}
+            mainImage={chanceSuccessParams.mainImage}
+          />
+        </section>
+        <section>
+          <AlreadyLaunched
+            title={launchedParams.title || ""}
+            launched={launchedParams.launched || []}
+          />
+        </section>
+        <section>
+          <TeamSection
+            title={teamParams.title || ""}
+            description={teamParams.description || ""}
+            members={teamParams.members || []}
+          />
+        </section>
+        <section>
+          <Banner
+            title={ctaParams.title}
+            subtitle={ctaParams.subtitle}
+            buttons={ctaParams.buttons}
+          />
+        </section>
+        <section className="pb-20">
+          <Sponsors
+            title={sponsorsParams.title}
+            subtitle={sponsorsParams.subtitle}
+            sponsorsImageUrl={sponsorsParams.sponsorsImageUrl}
+          />
+        </section>
+      </div>
+    </>
   );
 }
 

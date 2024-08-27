@@ -16,7 +16,7 @@ export function StartupStudio(props: StartupStudioProps) {
   return (
     <div className="lg:grid lg:grid-cols-4 gap-4 mx-auto px-6 lg:px-8 flex flex-col">
       <div className="col-span-1">
-        <h2 className="pt-8">
+        <h2 className="pt-4 lg:pt-8">
           {title}
         </h2>
       </div>
